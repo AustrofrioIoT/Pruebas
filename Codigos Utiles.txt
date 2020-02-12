@@ -1,0 +1,21 @@
+//Configuracion GitHub Primera Vez
+
+git config --global user.name "AustrofrioIoT"
+git config --global user.email austrofrioiot@gmail.com
+//Cuando se necesite subir codigo al repo
+
+git push -u origin master 
+
+
+//Repo Anoken Varios Proyectos con M5stack
+
+https://github.com/anoken
+
+//Pagina de Imagenes Para descargar a escala
+
+https://yandex.com/images/search?pos=367&p=6&ncrnd=1581027758390-8795641517013804&img_url=https%3A%2F%2Fcdn2.vectorstock.com%2Fi%2F1000x1000%2F96%2F81%2Fthermometer-icon-vector-7479681.jpg&text=temperature&rpt=simage
+
+//Software Para cambiar imagen en codigo C de 16 bits BITMAP luego de haber descargado de la pagina anterior la imagen y cambiado la
+extension en paint a tipo .bmp
+
+https://www.displaymodule.com/pages/copy-of-displaymodules-image-converter-free-download

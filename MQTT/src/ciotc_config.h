@@ -9,10 +9,10 @@ const char *ssid = "TP-LINK_AP_D89C";
 const char *password = "08713681";
 
 // Cloud IoT details.
-const char *project_id = "monitor-temperatura-m5stack";
+const char *project_id = "winter-bloom-265223";
 const char *location = "us-central1";
-const char *registry_id = "M5STACK_1";
-const char *device_id = "M5STACK_1";
+const char *registry_id = "iotcore-registry";
+const char *device_id = "esp32";
 
 // Configuration for NTP
 const char* ntp_primary = "pool.ntp.org";
@@ -27,10 +27,10 @@ const char* ntp_secondary = "time.nist.gov";
 // it's smaller add "00:" to the start. If it's too big or too small something
 // is probably wrong with your key.
 const char* private_key_str =
-    "c0:3b:71:85:bc:5d:ce:d3:10:8e:3c:88:e6:6c:d4:"
-    "b6:51:ec:a7:d5:7d:3e:71:31:68:a7:73:a5:14:1e:"
-    "9d:02";
-    
+    "33:f8:68:79:fc:f1:6b:84:dc:bf:4e:19:6e:77:25:"
+    "e6:27:80:cf:1d:57:39:2d:0b:4f:79:a0:65:dd:12:"
+    "ba:23";
+
 // Time (seconds) to expire token += 20 minutes for drift
 const int jwt_exp_secs = 3600; // Maximum 24H (3600*24)
 

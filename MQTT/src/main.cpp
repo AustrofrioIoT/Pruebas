@@ -1,10 +1,15 @@
+// The MQTT callback function for commands and configuration updates
+// Place your message handler code here.
+void messageReceived(String &topic, String &payload) {
+  Serial.println("incoming: " + topic + " - " + payload);
+}
 
 #include "universal-mqtt.h"
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
 const int oneWireBus = 12; 
-#define PUBLISH_DELAY 180000 //Tiempos de publicacion cada 30min(30*1000*60)
+#define PUBLISH_DELAY 1800000 //Tiempos de publicacion cada 30min(30*1000*60)
 unsigned long lastMillis = 0;
 // Setup a oneWire instance to communicate with any OneWire devices
 OneWire oneWire(oneWireBus);
@@ -18,7 +23,7 @@ void setup() {
   Serial.begin(115200);
   // Start the DS18B20 sensor
   sensors.begin();
-  pinMode(LED_BUILTIN, OUTPUT); //Led Indicador
+ 
   setupCloudIoT(); 
 }
 

@@ -54,6 +54,8 @@ int andre[2];
 int i=0;
 int closed=0;
 
+//Sonido
+#include "SonidoPuerta.h"
 
 void setup() {
 
@@ -76,8 +78,7 @@ void setup() {
   delay(1000); //Take some time to open up the Serial Monitor
 
   //Servidor Wifi------------
-   pinMode(PIN_AP, INPUT);
-   digitalWrite(PIN_AP,LOW);
+
   //declaração do objeto wifiManager
   WiFiManager wifiManager;
   
@@ -113,6 +114,13 @@ void loop() {
     }
     else if ((andre[0]==2)||(andre[1]==2))
     {
+/////////Sonido Puerta///////////
+      for (int i=0; i<45000;++i){
+      dacWrite(25,rawData[i]);
+      delayMicroseconds(34);
+      }
+      dacWrite (25,0);
+///////////////////////
       closed=0;
     }
     i=0;
@@ -142,7 +150,6 @@ void loop() {
     String payload = String("{\"timestamp\":") + time(nullptr) +
                      String(",\"temperature\":") + temperatureC +
                      String(",\"itemId\":{\"ubicacion\":{\"piso1\":\"enfermeria\"}}")+
-                     /*String(",\"humidity\":") + humidity +*/
                      String("}"); 
      Serial.println(payload);
 
@@ -151,9 +158,9 @@ void loop() {
 
 
  
-  //Condicional Para Reset de AP
-   if ( digitalRead(PIN_AP) == HIGH ) {
-      Serial.println("resetar"); //tenta abrir o portal
+  //Condicional Para Reset de AP con estado del boton C
+   if (M5.BtnC.read() == HIGH) {
+      Serial.println("Resetear AP"); //tenta abrir o portal
       if(!wifiManager.startConfigPortal("ESP_AP", "12345678") ){
         Serial.println("No se pudo Conectar");
         delay(2000);
